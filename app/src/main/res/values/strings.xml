@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidStudy</string>
+    <string name="search_hint">搜索学习资料</string>
+    <string name="update_hot_text">内容已更新</string>
+    <string name="onLoading">加载中...</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="update_project_text">项目已更新</string>
+    <string name="update_square_text">广场已更新</string>
+    <string name="update_result_text">结果已更新</string>
+    <string name="search_result">查询结果</string>
+    <string name="navigation_title">导航</string>
+</resources>

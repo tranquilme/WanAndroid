@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/home_dest"
+    tools:ignore="UnusedNavigation">
+
+    <custom_fragment
+        android:id="@+id/home_dest"
+        android:name="com.cl.androidstudy.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <custom_fragment
+        android:id="@+id/system_dest"
+        android:name="com.cl.navicationtest.SystemFragment"
+        android:label="fragment_system"
+        tools:layout="@layout/fragment_system" />
+    <custom_fragment
+        android:id="@+id/me_dest"
+        android:name="com.cl.androidstudy.ui.me.MeFragment"
+        android:label="fragment_me"
+        tools:layout="@layout/fragment_me" />
+    <custom_fragment
+        android:id="@+id/navigation_dest"
+        android:name="com.cl.androidstudy.ui.navigationart.NavigationFragment"
+        android:label="fragment_navigation"
+        tools:layout="@layout/fragment_navigation" />
+</navigation>
