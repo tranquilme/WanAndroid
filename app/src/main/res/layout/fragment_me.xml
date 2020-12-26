@@ -1,14 +1,417 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MeFragment">
+    android:layout_height="match_parent">
 
     <TextView
+        android:id="@+id/tv_navigation_title"
+        android:layout_width="0dp"
+        android:layout_height="48dp"
+        android:background="@color/bgColorPrimary"
+        android:elevation="2dp"
+        android:fontFamily="sans-serif-medium"
+        android:gravity="start|center"
+        android:paddingStart="16dp"
+        android:text="@string/me_title"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_login"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@color/appColorPrimary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation_title"
+        />
+
+    <TextView
+        android:id="@+id/tv_me_username"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="Me"
-        android:textSize="30sp" />
-</FrameLayout>
+        android:layout_marginStart="10dp"
+        android:text="点击图片登录"
+        android:textColor="@color/textColorPrimary"
+        android:textSize="20sp"
+        app:layout_constraintStart_toEndOf="@+id/iv_login"
+        app:layout_constraintTop_toTopOf="@+id/iv_login" />
+
+    <TextView
+        android:id="@+id/tv_me_userid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="ID:000000"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_login"
+        app:layout_constraintStart_toStartOf="@+id/tv_me_username" />
+
+    <com.zyp.cardview.YcCardView
+        android:id="@+id/card1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_login"
+        app:layout_constraintTop_toBottomOf="@+id/iv_login"
+        app:ycCardCornerRadius="4dp"
+        app:ycStartShadowColor="@color/appColorPrimary"
+        app:ycCardElevation="2dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:id="@+id/fl_me_myIntegral"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/iv_integralme"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_integralme" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="我的积分"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/imageView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+                <View
+                    android:id="@+id/view"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/appColorSecondary" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/fl_me_integralrank"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView55"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_integralrank"
+                    android:scaleY="0.7"
+                    android:scaleX="0.7"
+                    />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="积分排行"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/imageView66"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </com.zyp.cardview.YcCardView>
+
+    <com.zyp.cardview.YcCardView
+        android:id="@+id/card2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_login"
+        app:layout_constraintTop_toBottomOf="@+id/card1"
+        app:ycCardCornerRadius="4dp"
+        app:ycStartShadowColor="@color/appColorPrimary"
+        app:ycCardElevation="2dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:id="@+id/fl_me_share"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView555"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_share"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    />
+
+                <TextView
+                    android:id="@+id/textView555"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="我的分享"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/imageView6666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+                <View
+                    android:id="@+id/view66666"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/appColorSecondary" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/fl_me_collection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/imageView55555"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_collection" />
+
+                <TextView
+                    android:id="@+id/textViw55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="我的收藏"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/imageView666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </com.zyp.cardview.YcCardView>
+
+    <com.zyp.cardview.YcCardView
+        android:id="@+id/card3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_login"
+        app:layout_constraintTop_toBottomOf="@+id/card2"
+        app:ycCardCornerRadius="4dp"
+        app:ycStartShadowColor="@color/appColorPrimary"
+        app:ycCardElevation="2dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <FrameLayout
+                android:id="@+id/fl_me_permission"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/qimageView555"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_permission" />
+
+                <TextView
+                    android:id="@+id/qtextView555"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="开源许可"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/qimageView6666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+                <View
+                    android:id="@+id/qview66666"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/appColorSecondary" />
+            </FrameLayout>
+            <FrameLayout
+                android:id="@+id/fl_me_author"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/qqimageView55555"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_author"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    />
+
+                <TextView
+                    android:id="@+id/qqtextViw55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="关于作者"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:id="@+id/qqimageView666"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+            </FrameLayout>
+        </LinearLayout>
+    </com.zyp.cardview.YcCardView>
+
+    <com.zyp.cardview.YcCardView
+        android:id="@+id/card4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/iv_login"
+        app:layout_constraintTop_toBottomOf="@+id/card3"
+        app:ycCardCornerRadius="4dp"
+        app:ycStartShadowColor="@color/appColorPrimary"
+        app:ycCardElevation="2dp"
+        >
+
+            <FrameLayout
+                android:id="@+id/fl_me_quit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?android:attr/selectableItemBackground"
+                >
+
+                <ImageView
+                    android:id="@+id/eqimageView555"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    app:srcCompat="@drawable/ic_exit"
+                    android:scaleX="0.7"
+                    android:scaleY="0.7"
+                    />
+
+                <TextView
+                    android:id="@+id/eqtextView555"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="10dp"
+                    android:text="退出登录"
+                    android:textColor="@color/textColorPrimary" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginEnd="15dp"
+                    app:srcCompat="@drawable/ic_right" />
+
+            </FrameLayout>
+
+    </com.zyp.cardview.YcCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,7 +2,6 @@ package com.cl.androidstudy.common.navigator
 
 import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions

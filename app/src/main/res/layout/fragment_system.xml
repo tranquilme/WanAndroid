@@ -1,15 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SystemFragment">
+    android:orientation="vertical"
+    >
 
-    <TextView
-        android:id="@+id/system_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="System"
-        android:textSize="30sp" />
-</FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="@color/bgColorPrimary"
+        android:elevation="2dp"
+        >
+        <TextView
+            android:id="@+id/tv_system_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="4dp"
+            android:paddingBottom="4dp"
+            android:background="@drawable/shape_bg_system_tag"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/appColorPrimary"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/tv_system_tagname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="体系"
+            android:fontFamily="sans-serif-medium"
+            android:textColor="@color/textColorPrimary"
+            android:layout_gravity="center"
+            android:textSize="16sp"
+            />
+
+        <ImageView
+            android:id="@+id/iv_system_in"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_system_in"
+            android:layout_gravity="end|center"
+            android:layout_marginEnd="10dp"
+            android:visibility="gone"
+            android:background="@drawable/ripple_item_search"
+            />
+    </FrameLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_system_article"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_system_article"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_system_update_in"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="@string/update_result_text"
+                android:textColor="@color/appColorPrimary"
+                android:background="@color/bgColorSecondary"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tv_system_update_out"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="@string/update_result_text"
+                android:textColor="@color/appColorPrimary"
+                android:background="@color/bgColorSecondary"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                />
+
+            <TextView
+                android:id="@+id/tv_system_update_on"
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:text="@string/update_result_text"
+                android:textColor="@color/appColorPrimary"
+                android:background="@color/bgColorSecondary"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:visibility="gone"
+                />
+            
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</LinearLayout>

@@ -12,13 +12,15 @@
         android:id="@+id/tv_navigation_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="10dp"
         android:text="TextView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        />
 
-    <com.cl.androidstudy.ui.navigationart.FlowLayout
+    <com.cl.androidstudy.common.FlowLayout
         android:id="@+id/flow_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -28,5 +30,5 @@
         app:layout_constraintStart_toStartOf="@+id/tv_navigation_title"
         app:layout_constraintTop_toBottomOf="@+id/tv_navigation_title">
 
-    </com.cl.androidstudy.ui.navigationart.FlowLayout>
+    </com.cl.androidstudy.common.FlowLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

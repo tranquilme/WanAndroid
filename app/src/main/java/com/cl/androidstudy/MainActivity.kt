@@ -3,7 +3,10 @@ package com.cl.androidstudy
 import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
+import android.view.KeyEvent
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.Navigation
 import com.cl.androidstudy.common.navigator.CustomNavigator
@@ -15,6 +18,9 @@ import kotlinx.android.synthetic.main.system_icon_layout.*
 
 class MainActivity : AppCompatActivity() {
     private var bottomState = true
+    private var isExit = false
+    private val exitHandler = android.os.Handler()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,6 +64,8 @@ class MainActivity : AppCompatActivity() {
 //            }
             destinationMap[destination.id]?.transitionToEnd() // 跳转对应 layout 状态至最终状态
         }
+
+
     }
 
     fun bottomAnimation(showBottom: Boolean) {
@@ -75,5 +83,23 @@ class MainActivity : AppCompatActivity() {
             bottomState = showBottom
         }
     }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
+            if (isExit) {
+                finish()
+            } else {
+                Toast.makeText(this, "再次点击退出", Toast.LENGTH_SHORT).show()
+                isExit = true
+                val runnable = {
+                    isExit = false
+                }
+                exitHandler.postDelayed(runnable, 2000)
+            }
+            return false
+        }
+        return super.onKeyDown(keyCode, event)
+    }
+
 
 }

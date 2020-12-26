@@ -6,5 +6,8 @@ data class ArticleResponse(val data: Data, val errorCode: Int) {
 
 data class Datas(
     val link: String, val niceDate: String, val title: String,
-    val shareUser: String, val desc: String, val author: String
+    val shareUser: String, val desc: String, val author: String,
+    val chapterName: String, val superChapterName: String, val chapterId: Int,
+    val id: Int
 )
+

@@ -3,6 +3,7 @@ package com.cl.androidstudy.ui.home.hot
 import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,18 +12,21 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.cl.androidstudy.R
+import com.cl.androidstudy.base.BaseFragment
 import com.cl.androidstudy.common.loadmore.LoadMoreWrapper
 import com.cl.androidstudy.common.loadmore.EndRecyclerOnScrollListener
-import com.cl.androidstudy.logic.model.ArticleResponse
 import com.cl.androidstudy.logic.model.Datas
-import com.cl.androidstudy.ui.home.ArticleAdapter
+import com.cl.androidstudy.common.articleitem.ArticleAdapter
 import kotlinx.android.synthetic.main.fragment_home_hot.*
+import okhttp3.internal.notify
+import java.util.logging.Logger
+import kotlin.concurrent.thread
 
-class HotFragment : Fragment() {
+class HotFragment : BaseFragment() {
     private val hotViewModel by lazy { ViewModelProvider(this).get(HotViewModel::class.java) }
-    private val datas = ArrayList<Datas>()
     private var page = 1
     private var flag = 0 // 0 表示下滑刷新，1表示上拉刷新
+    private lateinit var adapter: ArticleAdapter
     private var loadMoreFlag = 0 // 0表示加载数据 ， 1表示不加载数据，避免已经拉到最低部又多次滑动多次加载数据
 
     override fun onCreateView(
@@ -36,8 +40,13 @@ class HotFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         rv_hot_article.layoutManager = LinearLayoutManager(activity)
-        val adapter = ArticleAdapter(datas, this.requireActivity(), 0)
-        val loadMoreAdapter =
+        adapter = ArticleAdapter(
+            datas,
+            this.requireActivity(),
+            0,
+            hotViewModel
+        )
+        loadMoreAdapter =
             LoadMoreWrapper(adapter)
         loadMore(loadMoreAdapter)
         rv_hot_article.adapter = loadMoreAdapter
@@ -52,16 +61,15 @@ class HotFragment : Fragment() {
                     datas.addAll(res.data.datas)
                     loadMoreAdapter.notifyDataSetChanged()
                     swipeRefreshLayout.isRefreshing = false
-                    tvAnimation()   // 执行 "内容已更新" 动画
-                }else if (flag == 1) { // 上拉刷新
+                    tvAnimation(tv_hot_update_in, tv_hot_update_on, tv_hot_update_out)   // 执行 "内容已更新" 动画
+                } else if (flag == 1) { // 上拉刷新
                     datas.addAll(res.data.datas)
                     loadMoreAdapter.setFootState(3) // 加载结束
-                    page ++
+                    page++
                     loadMoreFlag = 0
                 }
                 flag = 1
             }
-
         })
         swipeRefreshLayout.setOnRefreshListener {
             hotViewModel.queryArticle(0)
@@ -80,49 +88,4 @@ class HotFragment : Fragment() {
             }
         })
     }
-
-    fun tvAnimation() {  // tv 淡入动画
-        tv_hot_update_in.apply {
-            visibility = View.VISIBLE
-            alpha = 0f
-            animate().alpha(1f)
-                .setDuration(500)
-                .setListener(object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator?) {
-                        tv_hot_update_in.visibility = View.GONE
-                        tvOnAnimation()
-                    }
-                })
-        }
-    }
-
-    fun tvOnAnimation() {   // tv持续动画
-        tv_hot_update_on.visibility = View.VISIBLE
-        tv_hot_update_on.apply {
-            alpha = 1f
-            animate().alpha(1f)
-                .setDuration(800)
-                .setListener(object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator?) {
-                        tv_hot_update_on.visibility = View.GONE
-                        tvOutAnimation()
-                    }
-                })
-        }
-    }
-
-    fun tvOutAnimation() {  // tv淡出动画
-        tv_hot_update_out.visibility = View.VISIBLE
-        tv_hot_update_out.apply {
-            alpha = 1f
-            animate().alpha(0f)
-                .setDuration(500)
-                .setListener(object : AnimatorListenerAdapter() {
-                    override fun onAnimationEnd(animation: Animator?) {
-                        tv_hot_update_out.visibility = View.GONE
-                    }
-                })
-        }
-    }
-
 }

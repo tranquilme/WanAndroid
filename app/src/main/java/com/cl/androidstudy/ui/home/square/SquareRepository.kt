@@ -12,7 +12,7 @@ object SquareRepository {
             val squareData = ApiNetwork.getSquare(page)
             if (squareData.errorCode == 0) {
                 Result.success(squareData)
-            }else {
+            } else {
                 Result.failure(RuntimeException("errorCode is ${squareData.errorCode}"))
             }
         } catch (e: Exception) {

@@ -3,11 +3,22 @@
     <string name="search_hint">搜索学习资料</string>
     <string name="update_hot_text">内容已更新</string>
     <string name="onLoading">加载中...</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="update_project_text">项目已更新</string>
     <string name="update_square_text">广场已更新</string>
     <string name="update_result_text">结果已更新</string>
+    <string name="update_navigation_text">导航已更新</string>
     <string name="search_result">查询结果</string>
     <string name="navigation_title">导航</string>
+    <string name="me_title">我的</string>
+    <string name="title_activity_t">tActivity</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome !"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <string name="permission_title">开源许可</string>
 </resources>

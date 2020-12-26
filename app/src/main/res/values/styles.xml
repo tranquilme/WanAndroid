@@ -5,8 +5,18 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        
+    </style>
 
+    <!--设置 Dialog主题-->
+    <style name="BottomDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!--BottomDialog动画设置-->
+    <style name="BottomDialog.Animation" parent="ThemeOverlay.AppCompat.Dialog">
+        <item name="android:windowEnterAnimation">@anim/translate_dialog_in</item>
+        <item name="android:windowExitAnimation">@anim/translate_dialog_out</item>
     </style>
 
 </resources>

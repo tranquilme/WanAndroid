@@ -2,13 +2,13 @@ package com.cl.androidstudy.ui.navigationart
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.cl.androidstudy.R
+import com.cl.androidstudy.common.FlowLayout
 import com.cl.androidstudy.logic.model.NavigationResponse
 import com.cl.androidstudy.ui.web.WebActivity
 
@@ -32,7 +32,7 @@ class NavigationAdapter(private val navigationData: List<NavigationResponse.Navi
         val data = navigationData[position]
         holder.title.text = data.name
         for (i in data.articles.indices) {
-            val view = LayoutInflater.from(context).inflate(R.layout.item_navigation_article, holder.flowLayout,false) as TextView
+            val view = LayoutInflater.from(context).inflate(R.layout.item_navigation_tag, holder.flowLayout,false) as TextView
             view.text = data.articles[i].title
             var link = data.articles[i].link
             if (link[4] != 's') { // 如果 Link 是http开头的就要转化为https开头

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.me.login.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="409dp"
+        android:layout_height="200dp"
+        android:background="@drawable/shape_bg_login"
+        android:orientation="vertical"
+       >
+
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:gravity="center"
+            android:text="Android"
+            android:textColor="@color/appColorPrimary"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Study"
+            android:textColor="@color/appColorPrimary"
+            android:textSize="30sp" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_login_login"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <FrameLayout
+                android:id="@+id/frameLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="60dp"
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp"
+                app:layout_constraintBottom_toTopOf="@+id/frameLayout3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageView2"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="88dp"
+                    app:srcCompat="@drawable/ic_user"
+                    android:scaleX="0.8"
+                    android:scaleY="0.8"
+                    />
+
+                <EditText
+                    android:id="@+id/et_login_username"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="30dp"
+                    android:background="@null"
+                    android:hint="请输入用户名"
+                    android:textColorHint="@color/appColorPrimary"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/appColorPrimary" />
+            </FrameLayout>
+
+
+            <FrameLayout
+                android:id="@+id/frameLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:paddingStart="80dp"
+                android:paddingEnd="80dp"
+                app:layout_constraintBottom_toTopOf="@+id/button_login"
+                app:layout_constraintEnd_toEndOf="@+id/button_login"
+                app:layout_constraintStart_toStartOf="@+id/button_login"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/imageViw2"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center|left"
+                    android:layout_marginTop="1dp"
+                    android:layout_marginEnd="88dp"
+                    app:srcCompat="@drawable/ic_password"
+                    android:scaleX="1.2"
+                    android:scaleY="1.2"
+                    />
+
+                <EditText
+                    android:id="@+id/et_login_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center|left"
+                    android:layout_marginStart="30dp"
+                    android:background="@null"
+                    android:hint="请输入密码"
+                    android:inputType="textPassword"
+                    android:textColorHint="@color/appColorPrimary"
+                    />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginTop="35dp"
+                    android:background="@color/appColorPrimary" />
+            </FrameLayout>
+
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/ripple_bg_systemdialog_tag"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="登   录"
+                android:textColor="@color/appColorPrimary"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/button_register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="80dp"
+                android:layout_marginEnd="80dp"
+                android:background="@drawable/ripple_bg_systemdialog_tag"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:text="注   册"
+                android:textColor="@color/appColorPrimary"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/button_login"
+                app:layout_constraintVertical_bias="0.108" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

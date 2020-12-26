@@ -3,8 +3,9 @@ package com.cl.androidstudy.ui.home.square
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.cl.androidstudy.common.articleitem.ItemViewModel
 
-class SquareViewModel: ViewModel() {
+class SquareViewModel: ItemViewModel() {
     private var pageLiveData = MutableLiveData<Int>()
 
     fun queryArticle(page: Int) {

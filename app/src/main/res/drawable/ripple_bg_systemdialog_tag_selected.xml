@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/textColorThird"
+    >
+    <!--item背景颜色-->
+    <item android:drawable="@drawable/shape_bg_navigation_art"/>
+</ripple>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraint_hot"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -49,22 +50,28 @@
         app:layout_constraintStart_toEndOf="@+id/tv_hot_author"
         app:layout_constraintTop_toTopOf="@+id/tv_hot_author" />
 
+
     <ImageView
         android:id="@+id/iv_hot_collection"
-        android:layout_width="22dp"
-        android:layout_height="22dp"
+        android:layout_width="33dp"
+        android:layout_height="33dp"
+        android:padding="5dp"
+        android:background="@drawable/ripple_item_search"
+        android:src="@drawable/selector_bg_collection"
         app:layout_constraintBottom_toBottomOf="@+id/tv_hot_date"
         app:layout_constraintEnd_toEndOf="@+id/tv_hot_title"
-        app:layout_constraintTop_toTopOf="@+id/tv_hot_date"
-        app:srcCompat="@drawable/ic_hot_collection" />
+        app:layout_constraintTop_toTopOf="@+id/tv_hot_date" />
 
     <TextView
         android:id="@+id/tv_article_content"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:maxLines="3"
         android:textSize="13sp"
         app:layout_constraintStart_toStartOf="@+id/tv_hot_title"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hot_title" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_hot_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="10dp"
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

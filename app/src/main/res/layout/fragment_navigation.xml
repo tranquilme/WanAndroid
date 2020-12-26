@@ -7,28 +7,72 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tv_navigation_title"
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:background="@color/bgColorPrimary"
         android:elevation="2dp"
         android:fontFamily="sans-serif-medium"
-        android:gravity="center"
+        android:gravity="start|center"
+        android:paddingStart="16dp"
         android:text="@string/navigation_title"
         android:textColor="@color/textColorPrimary"
-        android:textSize="16sp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_navigation"
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/sr_navigation_update"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_navigation_title" >
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
+    <TextView
+        android:id="@+id/tv_navigation_update_in"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:background="@color/tagColorPrimary"
+        android:gravity="center"
+        android:text="@string/update_navigation_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_navigation_title" />
+
+    <TextView
+        android:id="@+id/tv_navigation_update_out"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:text="@string/update_navigation_text"
+        android:background="@color/tagColorPrimary"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_navigation_title"
+        android:visibility="gone"
+        />
+
+    <TextView
+        android:id="@+id/tv_navigation_update_on"
+        android:layout_width="0dp"
+        android:layout_height="30dp"
+        android:text="@string/update_navigation_text"
+        android:background="@color/tagColorPrimary"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_navigation_title"
+        android:visibility="gone"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

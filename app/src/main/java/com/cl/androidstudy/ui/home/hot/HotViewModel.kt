@@ -3,11 +3,12 @@ package com.cl.androidstudy.ui.home.hot
 import android.util.Log
 import android.view.animation.Transformation
 import androidx.lifecycle.*
+import com.cl.androidstudy.common.articleitem.ItemViewModel
 import com.cl.androidstudy.logic.model.ArticleResponse
 import kotlinx.coroutines.launch
 import java.lang.Exception
 
-class HotViewModel : ViewModel() {
+class HotViewModel : ItemViewModel() {
     private var pageLiveData = MutableLiveData<Int>()
 
     fun queryArticle(page: Int) {

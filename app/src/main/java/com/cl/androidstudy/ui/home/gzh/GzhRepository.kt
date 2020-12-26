@@ -1,6 +1,4 @@
 package com.cl.androidstudy.ui.home.gzh
-
-import android.util.Log
 import androidx.lifecycle.liveData
 import com.cl.androidstudy.logic.model.GzhResponse
 import com.cl.androidstudy.logic.network.ApiNetwork
@@ -11,6 +9,7 @@ import java.lang.RuntimeException
 
 object GzhRepository {
     fun getGzhData(id: Int, page: Int) = liveData {
+
         coroutineScope {
             val res = try {
                 val gzhCategoryResponse = async {

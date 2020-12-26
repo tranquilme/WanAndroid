@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--涟漪颜色-->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="@color/textColorThird"
+    >
+    <!--item背景颜色-->
+    <item android:drawable="@drawable/shape_bg_system_tag"/>
+</ripple>

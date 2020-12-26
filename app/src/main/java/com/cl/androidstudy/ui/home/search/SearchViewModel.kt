@@ -4,11 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
+import com.cl.androidstudy.common.articleitem.ItemViewModel
 import com.cl.androidstudy.logic.model.SearchParam
 import com.cl.androidstudy.ui.home.gzh.GzhRepository
 import com.cl.androidstudy.ui.home.searchD.SearchRepository
 
-class SearchViewModel: ViewModel(){
+class SearchViewModel: ItemViewModel(){
     private val paramLiveData = MutableLiveData<SearchParam>()
 
     fun queryArticle(page: Int, keywords: String) {

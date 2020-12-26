@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/linearLayout_github"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="2dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_github_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/ripple_item_search"
+            android:padding="12dp"
+            app:srcCompat="@drawable/ic_back" />
+
+        <TextView
+            android:id="@+id/tv_github_title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="14dp"
+            android:ellipsize="end"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:lines="1"
+            android:text="@string/permission_title"
+            android:textColor="#0C0A0A"
+            android:textSize="16sp" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout_github"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <LinearLayout
+                android:id="@+id/ll_github_retrofit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="1dp"
+                android:background="@color/bgColorPrimary"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Retrofit"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://github.com/square/retrofit"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_github_okhttp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bgColorPrimary"
+                android:foreground="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="OkHttp"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://github.com/square/okhttp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_github_yccardview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="1dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bgColorPrimary"
+                android:foreground="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="YcCardView"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://github.com/yangchong211/YCCardView"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_github_circleimageview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:elevation="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:background="@color/bgColorPrimary"
+                android:foreground="?android:attr/selectableItemBackground"
+                >
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="CircleImageView"
+                    android:textColor="@color/textColorPrimary"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginStart="10dp"
+                    android:textSize="16sp"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="https://github.com/hdodenhof/CircleImageView"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    />
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
