@@ -16,9 +16,9 @@ WanAndroid 采用 `Kotlin` 语言编写，结合`MVVM`+`Retrofit`+`Kotlin协程`
 
 |                              -                               |                              -                               |                              -                               |                              -                               |
 | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| ![1.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/1.png) | ![2.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/2.jpg) | ![3.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/3.jpg) | ![4.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/4.jpg) |
+| ![1.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/1.png) | ![2.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/2.png) | ![3.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/3.png) | ![4.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/4.png) |
 |                              -                               |                              -                               |                              -                               |                              -                               |
-| ![5.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/5.jpg) | ![6.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/6.jpg) | ![7.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/7.jpg) | ![8.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/8.jpg) |
+| ![5.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/5.png) | ![6.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/6.png) | ![7.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/7.png) | ![8.png](https://github.com/tranquilme/WanAndroid/blob/main/app/img/8.png) |
 
 
 
