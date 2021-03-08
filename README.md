@@ -24,5 +24,5 @@ WanAndroid 采用 `Kotlin` 语言编写，结合`MVVM`+`Retrofit`+`Kotlin协程`
 
 ## apk下载
 
-[WanAndroid](/tranquilme/WanAndroid/blob/main/app/WanAndroid.apk?raw=true)
+[WanAndroid](https://github.com/tranquilme/WanAndroid/blob/main/app/WanAndroid.apk?raw=true)
 
