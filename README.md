@@ -12,5 +12,11 @@ WanAndroid 采用 `Kotlin` 语言编写，结合`MVVM`+`Retrofit`+`Kotlin协程`
 
 
 
+## 项目截图
+
+首页模块
+
+<img src="C:\Users\clll\Desktop\sy1.png" alt="sy1" style="zoom:50%;" />
+
 
 
