@@ -14,9 +14,9 @@ WanAndroid 采用 `Kotlin` 语言编写，结合`MVVM`+`Retrofit`+`Kotlin协程`
 
 ## 项目截图
 
-首页模块
-
-<img src="C:\Users\clll\Desktop\sy1.png" alt="sy1" style="zoom:50%;" />
+| ![1.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/1.jpg) | ![2.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/2.jpg) | ![3.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/3.jpg) | ![4.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/1.jpg) |
+| :----------------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| ![5.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/5.jpg) | ![6.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/6.jpg) | ![7.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/7.jpg) | ![8.jpg](https://github.com/tranquilme/WanAndroid/blob/main/app/img/8.jpg) |
 
 
 
