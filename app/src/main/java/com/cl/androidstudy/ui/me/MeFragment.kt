@@ -11,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.cl.androidstudy.MyApplication
 import com.cl.androidstudy.R
+import com.cl.androidstudy.common.LoginState
 import com.cl.androidstudy.ui.me.author.AuthorActivity
 import com.cl.androidstudy.ui.me.collection.CollectionActivity
 import com.cl.androidstudy.ui.me.login.LoginActivity
@@ -62,10 +63,9 @@ class MeFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        val preferences = MyApplication.context.getSharedPreferences("cookieData", Context.MODE_PRIVATE)
-        val cookie = preferences.getStringSet("cookies", null)
-        val userName = preferences.getString("username", "")
-        val userid = preferences.getString("userid", "")
+        val cookie = LoginState.preferences.getStringSet("cookies", null)
+        val userName = LoginState.preferences.getString("username", "")
+        val userid = LoginState.preferences.getString("userid", "")
         if (cookie != null) {
             iv_login.setImageResource(R.drawable.head_pic)
             tv_me_username.text = userName

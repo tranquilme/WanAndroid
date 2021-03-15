@@ -9,7 +9,7 @@ object ApiNetwork {
 
     private val cookieService = ServiceCreator.createCookie<ApiService>()
 
-    suspend fun getArticle(page: Int) = apiService.getHotArticle(page) // 获取热门文章
+    suspend fun getArticle(page: Int) = cookieService.getHotArticle(page) // 获取热门文章
 
     suspend fun getCategory() = apiService.getCategory()    // 获取项目种类
 

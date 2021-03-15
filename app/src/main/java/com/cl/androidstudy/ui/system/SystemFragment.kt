@@ -1,11 +1,8 @@
 package com.cl.navicationtest
 
-import android.animation.Animator
-import android.animation.AnimatorListenerAdapter
 import android.app.Dialog
 import android.os.Bundle
 import android.view.Gravity
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,12 +17,11 @@ import com.cl.androidstudy.base.BaseFragment
 import com.cl.androidstudy.common.articleitem.ArticleAdapter
 import com.cl.androidstudy.common.loadmore.EndRecyclerOnScrollListener
 import com.cl.androidstudy.common.loadmore.LoadMoreWrapper
-import com.cl.androidstudy.logic.model.Datas
 import com.cl.androidstudy.logic.model.SystemKind
 import com.cl.androidstudy.ui.system.BottomDialogAdapter
 import com.cl.androidstudy.ui.system.SystemViewModel
 import kotlinx.android.synthetic.main.dialog_system.*
-import kotlinx.android.synthetic.main.dialog_system.imageView
+import kotlinx.android.synthetic.main.dialog_system.iv_web_back
 import kotlinx.android.synthetic.main.fragment_system.*
 
 
@@ -91,6 +87,9 @@ class SystemFragment : BaseFragment() {
                     iv_system_in.visibility = View.VISIBLE
                     tv_system_title.visibility = if (data.isNotEmpty()) View.VISIBLE else View.GONE
                     tvAnimation(tv_system_update_in, tv_system_update_on, tv_system_update_out)   // 执行 "内容已更新" 动画
+                    if (data.size < 10) {
+                        loadMoreAdapter.setFootState(4)
+                    }
                 } else {
                     datas.addAll(res.data.datas)
                     loadMoreAdapter.setFootState(3) // 加载结束
@@ -136,7 +135,7 @@ class SystemFragment : BaseFragment() {
             (resources.displayMetrics.heightPixels * 0.88).toInt()
         )
         bottomDialog.setContentView(view, layoutParams) // 为Dialog设置布局，同时传入自定义的layoutParams参数
-        bottomDialog.imageView.setOnClickListener { // 为dialog设置退出动画
+        bottomDialog.iv_web_back.setOnClickListener { // 为dialog设置退出动画
             val animation =
                 AnimationUtils.loadAnimation(requireActivity(), R.anim.translate_dialog_out)
             view.startAnimation(animation)

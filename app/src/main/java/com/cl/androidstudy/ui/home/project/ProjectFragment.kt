@@ -34,6 +34,7 @@ class ProjectFragment : BaseFragment() {
         return inflater.inflate(R.layout.fragment_home_project, container, false)
     }
 
+
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val categoryAdapter = CategoryAdapter(categoryData, projectViewModel, 0)
@@ -75,6 +76,9 @@ class ProjectFragment : BaseFragment() {
                     swipeRefreshLayout_project.isRefreshing = false
                     layoutManager.scrollToPositionWithOffset(0, 0) // 将item移动到第一条
                     tvAnimation(tv_project_update_in, tv_project_update_on, tv_project_update_out)   // 执行 "内容已更新" 动画
+                    if (project.data.datas.size < 10) {
+                        loadMoreAdapter.setFootState(4)
+                    }
                 } else { // 上滑刷新
                     datas.addAll(project.data.datas)
                     loadMoreAdapter.setFootState(3) // 加载结束

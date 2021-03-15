@@ -13,6 +13,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.cl.androidstudy.MyApplication
 import com.cl.androidstudy.R
+import com.cl.androidstudy.common.articleitem.CollectState
 import com.cl.androidstudy.common.articleitem.ItemViewModel
 import com.cl.androidstudy.ext.htmlToString
 import com.cl.androidstudy.logic.model.CollectionResponse
@@ -23,9 +24,6 @@ class CollectionAdapter(
     private val context: Context, private val viewModel: ItemViewModel,
     private val impl: RemoveImpl
 ) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-    private val sharedPreferences = MyApplication.context.getSharedPreferences("collection", Context.MODE_PRIVATE)
-    private val editor = sharedPreferences.edit()
-    private var collectionId = mutableSetOf<String>()
 
     inner class VH(view: View) : RecyclerView.ViewHolder(view) {
         val title: TextView = view.findViewById(R.id.tv_hot_title)
@@ -51,6 +49,7 @@ class CollectionAdapter(
         val author = articleDatas[position].author
         val link = articleDatas[position].link
         val originId = articleDatas[position].originId
+        val id = articleDatas[position].id
         holder as VH
         holder.title.text = title
         holder.date.text = date
@@ -71,11 +70,10 @@ class CollectionAdapter(
             context.startActivity(intent)
         }
         holder.collection.setOnClickListener {
+            CollectState.state = true
+            CollectState.unCollectSet.add(originId)
+            CollectState.collectSet.remove(originId)
             it.isSelected = false
-            collectionId.remove(originId.toString())
-            editor.clear()
-            editor.putStringSet("collectionId", collectionId)
-            editor.apply()
             viewModel.setUncollection(originId)
             articleDatas.removeAt(position)
             impl.remove(position, articleDatas.size)

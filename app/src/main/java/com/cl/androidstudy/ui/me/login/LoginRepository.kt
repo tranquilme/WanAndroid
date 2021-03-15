@@ -3,10 +3,11 @@ package com.cl.androidstudy.ui.me.login
 import androidx.lifecycle.liveData
 import com.cl.androidstudy.logic.model.LoginResponse
 import com.cl.androidstudy.logic.network.ApiNetwork
+import kotlinx.coroutines.Dispatchers
 import java.lang.Exception
 
 object LoginRepository {
-    fun login(username: String, password: String) = liveData {
+    fun login(username: String, password: String) = liveData(Dispatchers.IO) {
         val res = try {
             val loginResult = ApiNetwork.login(username, password)
             Result.success(loginResult)

@@ -8,6 +8,8 @@ import okhttp3.Response
 import java.io.IOException
 
 class AddCookiesInterceptor: Interceptor{
+    private val TAG = "AddCookiesInterceptor.class"
+
     override fun intercept(chain: Interceptor.Chain): Response {    // 客户端发送请求时调用，往请求头中加入cookie
         val builder = chain.request().newBuilder()
         try {

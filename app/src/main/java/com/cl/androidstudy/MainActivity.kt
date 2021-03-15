@@ -8,19 +8,25 @@ import android.view.KeyEvent
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import com.cl.androidstudy.common.navigator.CustomNavigator
+import com.cl.androidstudy.ui.me.collection.CollectionViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.home_icon_layout.*
 import kotlinx.android.synthetic.main.me_icon_layout.*
 import kotlinx.android.synthetic.main.navigation_icon_layout.*
 import kotlinx.android.synthetic.main.system_icon_layout.*
+import kotlinx.coroutines.CoroutineName
 
 class MainActivity : AppCompatActivity() {
+    private val TAG = "MainActivity.class"
     private var bottomState = true
     private var isExit = false
     private val exitHandler = android.os.Handler()
-
+    private val collectionViewModel by lazy { ViewModelProvider(this).get(CollectionViewModel::class.java) }
+    private var page = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,33 +45,27 @@ class MainActivity : AppCompatActivity() {
 
         val navController = Navigation.findNavController(this, R.id.fragment) // 创建navController
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment)!!
+        // 生成自定义Navigator对象
         val navigator = CustomNavigator(
             this,
             navHostFragment.childFragmentManager,
             R.id.fragment
-        )// 生成自定义Navigator对象
+        )
         navController.navigatorProvider.addNavigator("custom_fragment", navigator) // 添加 key, value
         navController.setGraph(R.navigation.my_nav)  // 要在 CustomNavigator 类被加载之后添加graph，不然找不到 custom_fragment节点
         destinationMap.forEach {           // 循环map中的entity
                 map ->
-            map.value.setOnClickListener {
-                navController.navigate(map.key)  // 先获取节点名称，然后从hashmap中取出对应的navigator，最后调用navigator的navigate方法
-            }
+                map.value.setOnClickListener {
+                    navController.navigate(map.key)  // 先获取节点名称，然后从hashmap中取出对应的navigator，最后调用navigator的navigate方法
+                }
         }
+
 
         navController.addOnDestinationChangedListener { controller, destination, _ -> // 设置底部导航栏图标动画
             controller.popBackStack()
             destinationMap.forEach { map -> map.value.progress = 0f } // 循环设置 layout 状态为初始状态
-//            when(destination.id) {
-//                R.id.homeFragment -> homeLayout.transitionToEnd()
-//                R.id.systemFragment -> systemLayout.transitionToEnd()
-//                R.id.squareFragment -> squareLayout.transitionToEnd()
-//                R.id.meFragment -> meLayout.transitionToEnd()
-//            }
             destinationMap[destination.id]?.transitionToEnd() // 跳转对应 layout 状态至最终状态
         }
-
-
     }
 
     fun bottomAnimation(showBottom: Boolean) {

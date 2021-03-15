@@ -11,6 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.cl.androidstudy.MyApplication
 import com.cl.androidstudy.R
+import com.cl.androidstudy.common.LoginState
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -44,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                 }else {
                     sr_login_login.isRefreshing = false
                     Toast.makeText(this, "登陆成功!", Toast.LENGTH_SHORT).show()
-                    val preference = MyApplication.context.getSharedPreferences("cookieData", Context.MODE_PRIVATE)
+                    val preference = LoginState.preferences
                     val editor = preference.edit().apply {
                         putString("username", res.data?.nickname)
                         putString("userid", res.data?.id.toString())

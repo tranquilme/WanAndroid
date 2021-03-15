@@ -14,8 +14,7 @@
     <custom_fragment
         android:id="@+id/system_dest"
         android:name="com.cl.navicationtest.SystemFragment"
-        android:label="fragment_system"
-        tools:layout="@layout/fragment_system" />
+        android:label="fragment_system"/>
     <custom_fragment
         android:id="@+id/me_dest"
         android:name="com.cl.androidstudy.ui.me.MeFragment"

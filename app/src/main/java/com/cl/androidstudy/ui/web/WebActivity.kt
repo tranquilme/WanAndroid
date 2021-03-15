@@ -72,6 +72,10 @@ class WebActivity : AppCompatActivity() {
                 }
             }
         }
+
+        iv_web_back.setOnClickListener{
+            finish()
+        }
     }
 
     override fun onDestroy() {

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     >
 
-    <com.cl.androidstudy.ui.home.gzh.CategoryRecyclerview
+    <com.cl.androidstudy.ui.home.CategoryRecyclerview
         android:id="@+id/rv_gzh_category"
         android:layout_width="0dp"
         android:layout_height="wrap_content"

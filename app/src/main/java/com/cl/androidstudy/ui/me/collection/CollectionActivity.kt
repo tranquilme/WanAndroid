@@ -21,6 +21,7 @@ import com.cl.androidstudy.logic.model.CollectionResponse
 import kotlinx.android.synthetic.main.activity_collection.*
 
 class CollectionActivity : BaseActivity() {
+    private val TAG = "CollectionActivity.class"
     private val collectionViewModel by lazy { ViewModelProvider(this).get(CollectionViewModel::class.java) }
     private val datas = ArrayList<CollectionResponse.CollectionDatas>()
     private var page = 1
@@ -55,6 +56,7 @@ class CollectionActivity : BaseActivity() {
         collectionViewModel.getCollection(0) // 查询第一页数据
         collectionViewModel.collectionLiveData.observe(this, Observer {
             val res = it.getOrNull()    // 如果出错数据就为空
+            Log.d(TAG, "onCreate: $res")
             if (res != null) {
                 if (flag == 0) { // 下滑刷新
                     datas.clear()
@@ -72,6 +74,10 @@ class CollectionActivity : BaseActivity() {
                     loadMoreAdapter.setFootState(3) // 加载结束
                     page++
                     loadMoreFlag = 0
+                    if (res.data.datas.isEmpty()) {
+                        loadMoreFlag = 1
+                        loadMoreAdapter.setFootState(4)
+                    }
                 }
                 flag = 1
             }

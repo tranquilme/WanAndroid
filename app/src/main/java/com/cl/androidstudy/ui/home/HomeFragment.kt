@@ -42,7 +42,6 @@ class HomeFragment : Fragment() {
             }
         })
 
-
         iv_search.setOnClickListener {
             val keywords = et_search.text.toString()
             if (keywords.isEmpty()) {
@@ -53,6 +52,7 @@ class HomeFragment : Fragment() {
                 startActivity(intent)
             }
         }
+
         viewPager2_home.adapter = object : FragmentStateAdapter(this) {
             override fun getItemCount() = 4
 
@@ -65,6 +65,7 @@ class HomeFragment : Fragment() {
                 }
 
         }
+//        viewPager2_home.isUserInputEnabled = false  设置viewpager2禁止滑动
         TabLayoutMediator(tabLayout_home, viewPager2_home) { tab, position ->
             when (position) {
                 0 -> tab.text = "热门"

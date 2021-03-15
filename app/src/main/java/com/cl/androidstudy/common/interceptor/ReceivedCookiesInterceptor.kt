@@ -3,6 +3,7 @@ package com.cl.androidstudy.common.interceptor
 import android.content.Context
 import android.util.Log
 import com.cl.androidstudy.MyApplication
+import com.cl.androidstudy.common.LoginState
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -14,8 +15,7 @@ class ReceivedCookiesInterceptor: Interceptor{
             for (data in originalResponse.headers("Set-Cookie")) {
                 cookies.add(data)
             }
-            val sharedPreferences = MyApplication.context.getSharedPreferences("cookieData", Context.MODE_PRIVATE)
-            val editor = sharedPreferences.edit()
+            val editor = LoginState.editor
             editor.putStringSet("cookies", cookies)
             editor.apply()
         }
